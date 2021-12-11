@@ -19,6 +19,9 @@ AddEventHandler('mb_blackout:triggerblackout', function()
 end)
 
 function BlackoutOn()
+    if Config.Soundeffect then
+        PlaySoundFrontend(-1, "Out_Of_Bounds_Timer", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 1)
+    end
     SetArtificialLightsState(true)
     if Config.ShowVehicleLights then
         SetArtificialLightsStateAffectsVehicles(false)
@@ -29,6 +32,9 @@ function BlackoutOn()
 end
 
 function BlackoutOff()
+    if Config.Soundeffect then
+        PlaySoundFrontend(-1, "Out_Of_Bounds_Timer", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 1)
+    end
     SetArtificialLightsState(false)
     if Config.ShowVehicleLights then
         SetArtificialLightsStateAffectsVehicles(true)
