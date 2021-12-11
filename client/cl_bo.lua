@@ -1,5 +1,4 @@
 ESX = ESX
-local blackoutState = false
 
 if Config.UseOldESX then
     ESX = nil
