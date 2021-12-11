@@ -7,10 +7,6 @@ if Config.UseOldESX then
     end)
 end
 
-function AlertSound()
-    PlaySoundFrontend(-1, "Out_Of_Bounds_Timer", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 1)
-end
-
 RegisterNetEvent('mb_blackout:triggerblackout')
 AddEventHandler('mb_blackout:triggerblackout', function()
     BlackoutOn()
