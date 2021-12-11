@@ -6,10 +6,10 @@ Simple blackout resource for FiveM
 - Can be easily converted to work with any framework. 
 
 # Installation Guide
-1. Download the resource from Github
+1. Download the resource from GitHub
 2. Drag n' drop the folder to your `resources` folder
-3. Rename the folder to `mb_teleport`
-4. Add `ensure mb_teleport` to your server.cfg file
+3. Rename the folder to `mb_blackout`
+4. Add `ensure mb_blackout` to your server.cfg file
 5. Ensure the resource or restart your server
 
 # Usage
