@@ -9,13 +9,13 @@ if Config.UseOldESX then
 end
 
 if Config.UseCommand then
-RegisterCommand(blackoutCommand, function(source, args, rawCommand)
-    local source = source
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local itemCount = xPlayer.getInventoryItem(blackoutItem).count
-    if itemCount >= 1 then
-        xPlayer.removeInventoryItem(blackoutItem, 1)
-        TriggerEvent('mb_blackout:server:triggerblackout', source)
+    RegisterCommand(blackoutCommand, function(source, args, rawCommand)
+        local source = source
+        local xPlayer = ESX.GetPlayerFromId(source)
+        local itemCount = xPlayer.getInventoryItem(blackoutItem).count
+        if itemCount >= 1 then
+            xPlayer.removeInventoryItem(blackoutItem, 1)
+            TriggerEvent('mb_blackout:server:triggerblackout', source)
         end
     end, false)
 end

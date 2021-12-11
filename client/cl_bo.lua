@@ -24,7 +24,9 @@ function BlackoutOn()
     if Config.ShowVehicleLights then
         SetArtificialLightsStateAffectsVehicles(false)
     end
-    ESX.ShowAdvancedNotification('HACKED', '', 'Time to fear the greatness of Masi', Config.NotifyBlackoutON, 5, false)
+    if Config.SendNotification then
+        ESX.ShowAdvancedNotification('HACKED', '', 'Time to fear the greatness of Masi', Config.NotifyBlackoutON, 5, false)
+    end
 end
 
 function BlackoutOff()
@@ -32,7 +34,9 @@ function BlackoutOff()
     if Config.ShowVehicleLights then
         SetArtificialLightsStateAffectsVehicles(true)
     end
-    ESX.ShowAdvancedNotification('GOVERNMENT', '', 'Power management system has been restored', Config.NotifyBlackoutOFF, 5, false)
+    if Config.SendNotification then
+        ESX.ShowAdvancedNotification('GOVERNMENT', '', 'Power management system has been restored', Config.NotifyBlackoutOFF, 5, false)
+    end
 end
 
 AddEventHandler('onResourceStop', function(resource)
