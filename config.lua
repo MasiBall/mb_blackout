@@ -1,9 +1,12 @@
 Config = {}
 
 -- General configuration
-Config.BlackoutDuration = 60
+Config.UseOldESX = false
+Config.BlackoutDuration = 60 -- How long will the blackout last (In seconds)
 Config.SendNotification = true
 Config.Soundeffect = true
+Config.ShowVehicleLights = true
+Config.DiscordLog = true
 
 -- How blackout can be triggered
 Config.UsableItem = true -- Item can be changed in sv_bo.lua
