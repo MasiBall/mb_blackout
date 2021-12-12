@@ -25,12 +25,12 @@ Resource which allows the player to trigger a blackout (all lights disabled) for
 ### Old ESX (Item limit)
 ```sql
 INSERT INTO `items` (name, label, limit) VALUES
-  ('laptop', 'Laptop', 1)
+  ('tablet', 'Tablet', 1)
 ;
 ```
 ### Updated ESX (Item weight)
 ```sql
 INSERT INTO `items` (name, label, weight) VALUES
-  ('laptop', 'Laptop', 3)
+  ('tablet', 'Tablet', 3)
 ;
 ```

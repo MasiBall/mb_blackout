@@ -1,6 +1,6 @@
 -- Configuration
 local blackoutCommand = 'hackbo'
-local blackoutItem = 'laptop'
+local blackoutItem = 'tablet'
 local discordwebhook = 'INSERT_WEBHOOK_HERE'
 
 if Config.UseOldESX then
@@ -37,11 +37,10 @@ end
 RegisterServerEvent('mb_blackout:server:triggerblackout')
 AddEventHandler('mb_blackout:server:triggerblackout', function(source)
 	local source = source
-        if Config.DiscordLog then
-            sendToDiscordLogsEmbed(3158326, '`💀` | Blackout',' Player: `' ..GetPlayerName(source).. '` - `'..GetPlayerIdentifier(source, 0)..'` triggered blackout')
-        end
-		TriggerClientEvent('mb_blackout:triggerblackout', -1)
-	end
+    if Config.DiscordLog then
+        sendToDiscordLogsEmbed(3158326, '`💀` | Blackout',' Player: `' ..GetPlayerName(source).. '` - `'..GetPlayerIdentifier(source, 0)..'` triggered blackout')
+    end
+	TriggerClientEvent('mb_blackout:triggerblackout', -1)
 end)
 
 function sendToDiscordLogsEmbed(color, name, message, footer)
