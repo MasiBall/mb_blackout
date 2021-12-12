@@ -24,7 +24,7 @@ while not HasAnimDictLoaded(animdict) do --varmista että animaatio on loadattu
     Citizen.Wait(0)
 end
 TaskPlayAnim(playerPed, animdict, anim, 8.0, -8, -1, 49, 0, 0, 0, 0)
-Citizen.wait(10000)
+Citizen.wait(Config.HackingTime)
 ClearPedTasksImmediatly(playerPed)
 end)
 
