@@ -15,6 +15,8 @@ if Config.UseCommand then
         local itemCount = xPlayer.getInventoryItem(blackoutItem).count
         if itemCount >= 1 then
             xPlayer.removeInventoryItem(blackoutItem, 1)
+            TriggerClientEvent('mb_blackout:triggeranim')
+            Citizen.Wait(Config.HackingTime)
             TriggerEvent('mb_blackout:server:triggerblackout', source)
         end
     end, false)
@@ -26,6 +28,8 @@ if Config.UsableItem then
         local xPlayer = ESX.GetPlayerFromId(source)
 
         xPlayer.removeInventoryItem(blackoutItem, 1)
+        TriggerClientEvent('mb_blackout:triggeranim')
+        Citizen.Wait(Config.HackingTime)
         TriggerEvent('mb_blackout:server:triggerblackout', source)
     end)
 end
