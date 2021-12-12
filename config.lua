@@ -3,7 +3,7 @@ Config = {}
 -- General configuration
 Config.UseOldESX = false
 Config.BlackoutDuration = 60 -- How long will the blackout last (In seconds)
-Config.HackingTime = How long will hacking take
+Config.HackingTime = 15 -- How long will hacking take (In seconds) 
 Config.SendNotification = true
 Config.Soundeffect = true
 Config.ShowVehicleLights = true
