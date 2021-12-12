@@ -14,6 +14,20 @@ AddEventHandler('mb_blackout:triggerblackout', function()
     BlackoutOff()
 end)
 
+RegisterNetEvent('mb_blackout:triggeranim')
+AddEventHandler('mb_blackout:triggeranim', function()
+local playerPed = PlayerPedId() 
+local animdict = 'animdictinnimi' --animaation dictionary
+local anim = 'animinnimi' --animaation nimi
+RequestAnimDict(animdict) -- requestaa animaatio
+while not HasAnimDictLoaded(animdict) do --varmista että animaatio on loadattu
+    Citizen.Wait(0)
+end
+TaskPlayAnim(playerPed, animdict, anim, 8.0, -8, -1, 49, 0, 0, 0, 0)
+Citizen.wait(10000)
+ClearPedTasksImmediatly(playerPed)
+end)
+
 function BlackoutOn()
     if Config.Soundeffect then
         PlaySoundFrontend(-1, "Out_Of_Bounds_Timer", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 1)
