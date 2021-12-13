@@ -14,7 +14,7 @@ Resource which allows the player to trigger a blackout (all lights disabled) for
 3. Rename the folder to `mb_blackout`
 4. Add `ensure mb_blackout` to your server.cfg file
 5. Configure config.lua and sv_bo.lua files
-6. Add the item into your database
+6. Add the item to your database
 7. Ensure the resource or restart your server
 
 # Usage
