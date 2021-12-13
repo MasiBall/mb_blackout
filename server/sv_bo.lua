@@ -15,21 +15,22 @@ if Config.UseCommand then
         local itemCount = xPlayer.getInventoryItem(blackoutItem).count
         if itemCount >= 1 then
             xPlayer.removeInventoryItem(blackoutItem, 1)
-            TriggerClientEvent('mb_blackout:triggeranim')
-            Citizen.Wait(Config.HackingTime *1000)
+            TriggerClientEvent('mb_blackout:triggeranim', source)
+            Wait(Config.HackingTime *1000)
             TriggerEvent('mb_blackout:server:triggerblackout', source)
+        else
+          TriggerClientEvent('esx:showNotification', source, "You don't have the required item")
         end
     end, false)
 end
 
 if Config.UsableItem then
     ESX.RegisterUsableItem(blackoutItem, function(source)
-        local source = source
         local xPlayer = ESX.GetPlayerFromId(source)
 
         xPlayer.removeInventoryItem(blackoutItem, 1)
-        TriggerClientEvent('mb_blackout:triggeranim')
-        Citizen.Wait(Config.HackingTime *1000)
+        TriggerClientEvent('mb_blackout:triggeranim', source)
+        Wait(Config.HackingTime *1000)
         TriggerEvent('mb_blackout:server:triggerblackout', source)
     end)
 end
@@ -40,7 +41,18 @@ AddEventHandler('mb_blackout:server:triggerblackout', function(source)
     if Config.DiscordLog then
         sendToDiscordLogsEmbed(3158326, '`💀` | Blackout',' Player: `' ..GetPlayerName(source).. '` - `'..GetPlayerIdentifier(source, 0)..'` triggered blackout')
     end
-	TriggerClientEvent('mb_blackout:triggerblackout', -1)
+    if Config.UsevSync then
+        ExecuteCommand('blackout')
+        Wait(200)
+        TriggerEvent('vSync:requestSync')
+        TriggerClientEvent('mb_blackout:triggerblackout', -1)
+        Wait(Config.BlackoutDuration *1000)
+        ExecuteCommand('blackout')
+        Wait(200)
+        TriggerEvent('vSync:requestSync')
+    else
+        TriggerClientEvent('mb_blackout:triggerblackout', -1)
+     end
 end)
 
 function sendToDiscordLogsEmbed(color, name, message, footer)
